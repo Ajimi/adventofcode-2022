@@ -24,15 +24,6 @@ fun main() {
     println(part2(input))
 }
 
-private infix fun Int.score(me: Int): Int {
-    val difference = this - me
-    return when {
-        difference > 0 -> 0
-        difference == 0 -> 3
-        else -> 6
-    }
-}
-
 private fun List<String>.parse(): List<Pair<Int, Int>> = map {
     it.split(" ")
 }.map { (first, second) ->
