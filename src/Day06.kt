@@ -1,6 +1,6 @@
 fun main() {
-    fun String.packetStart(length: Int): Int = windowed(length)
-        .indexOfFirst { it.toSet().size == length } + length
+    fun String.packetStart(windowSize: Int): Int = windowedSequence(windowSize)
+        .indexOfFirst { it.toSet().size == windowSize } + windowSize
 
     fun part1(input: String): Int = input.packetStart(4)
 

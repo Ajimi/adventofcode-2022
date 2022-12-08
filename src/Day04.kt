@@ -1,11 +1,11 @@
 fun main() {
-    fun part1(input: List<List<IntRange>>): Int = input.filter { (first, second) ->
+    fun part1(ranges: List<List<IntRange>>): Int = ranges.count { (first, second) ->
         first.all { it in second } || second.all { it in first }
-    }.size
+    }
 
-    fun part2(input: List<List<IntRange>>): Int = input.filter { (first, second) ->
+    fun part2(ranges: List<List<IntRange>>): Int = ranges.count { (first, second) ->
         first.any { it in second }
-    }.size
+    }
 
     // test if implementation meets criteria from the description, like:
     val testInput = readInput("Day04_test").toSectionsRange()
